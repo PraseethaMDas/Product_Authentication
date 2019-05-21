@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Authentication using blockchain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.33/dist/web3.min.js"></script>
+    <script type="module" src="./js/parts.js"></script>
+    
+</head>
+
+<body>
+    <div class="container">
+        <nav class="teal">
+            <div class="nav-wrapper">
+                <!-- <a href="#" class="brand-logo right">Logo</a> -->
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="index.html">Manufacturer</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h2>Manufacturer</h2>
+        <div class="row">
+            <div class="col s6">
+                <label>Address: </label>
+                <p id="part-factory-address">Loading...</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <label>Serial Number: </label><input type="text" id="create-serial-number" placeholder="Product Serial Number" required>
+                <label>Product Type: </label>
+                <select id="create-part-type" class="browser-default">
+                    <option>Perfume A</option>
+                    <option>Perfume B</option>
+                    <option>Perfume C</option>
+                </select>
+                <label>Expiry Date: </label><input type="date" id="expiry-date" placeholder="Expiry Date" required>
+                <label>Price: </label><input type="text" id="product-price" placeholder="Product price" required>
+                <button id="build-part" class="waves-effect waves-light btn">Add Product</button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="part-list" class="collection with-header">
+                <p class="collection-header">Products Owned</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div id="part-list-details">
+                    <label>Manufacturer Address:</label>
+                    <p id="details-address"></p>
+                    <label>Serial Number:</label>
+                    <p id="details-serial-num"></p>
+                    <label>Product Type:</label>
+                    <p id="details-part-type"></p>
+                    <label>Creation Date:</label>
+                    <p id="details-creation-date"></p>
+                    <label>Expiry Date:</label>
+                    <p id="details-expiry-date"></p>
+                    <label>Price:</label>
+                    <p id="details-price"></p>
+                    <div class="display:none">
+                    <label>Price:</label>
+                    <p id="details-sell-date"></p></div>
+                    <input id="part-change-ownership-input" type="text" placeholder="Insert address" required>
+                    <button id="part-change-ownership-btn" class="waves-effect waves-light btn">Change Ownership</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
